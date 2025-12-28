@@ -1,5 +1,10 @@
 //Referencias DOM
  const body = document.getElementById('body')
+ const v1 = document.getElementById('v1')
+ const v2 = document.getElementById('v2')
+ const v3 = document.getElementById('v3')
+ 
+ 
 
 //Modificacoes BOM
 
@@ -12,6 +17,22 @@ let larguratela = window.innerWidth
 let posicaoY = Math.random()
 let posicaoX = Math.random()
 let classMosquito = ''
+let contadorvida = 1
+let contadortempo = 20
+let spawnMosca = 1500
+let nivel = sessionStorage.getItem('nivel_jogo')
+
+    if(nivel === '1'){
+        spawnMosca = 1500
+    }
+    else if(nivel === '2'){
+        spawnMosca = 1200
+    }
+    else if(nivel === '3'){
+        spawnMosca = 850
+    }
+   
+    
 
 // Funções
 
@@ -30,6 +51,21 @@ function TamanhoTela (){
         }
 
 function posicaoRandomica(){
+
+    if(document.getElementById("mosquito")) {
+        document.getElementById("mosquito").remove()
+
+        if(contadorvida>3){
+
+            window.location.href="fim_de_jogo.html"
+            
+        }
+
+        document.getElementById('v'+contadorvida).src ="imagens/coracao_vazio.png"
+        contadorvida += 1
+
+    }
+
 
     let posicaoY = Math.random()
     let posicaoX = Math.random()
@@ -65,7 +101,10 @@ function posicaoRandomica(){
         mosquito.style.left = posicaoX+'px'
         mosquito.style.top = posicaoY+'px'
         mosquito.style.position = 'absolute'
-
+        mosquito.id ="mosquito"
+        mosquito.onclick = function (){
+            this.remove()
+        }
         if (Math.random() < 0.5) {
         mosquito.style.transform = 'scaleX(-1)' // Vira horizontalmente
         }   
@@ -77,9 +116,26 @@ function posicaoRandomica(){
 
 
         }
+ let cronometro = setInterval(function(){
+
+    if(contadortempo<0){
+        clearInterval(cronometro)
+        clearInterval(jogo)
+        window.location.href="vitoria.html"
+    }
+    else{
+    document.getElementById('cronometro').innerHTML= contadortempo
+    contadortempo--
+    }
+},1000)
+
     
 //Execução da logica
+let jogo = setInterval(function(){
+    posicaoRandomica()
+},spawnMosca)
 
-posicaoRandomica()
+
+
 
 
