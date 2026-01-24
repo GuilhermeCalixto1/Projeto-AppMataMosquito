@@ -9,7 +9,8 @@
 ## 📸 Demonstração
 
 <div align="center">
-  <img src="./print-jogo.png" width="700px" alt="Print do Jogo Mata Mosquito" />
+  <img src="imagens/Captura de tela 2026-01-24 184413.png" width="700px" alt="Print do Jogo Mata Mosquito" />
+  <img src="imagens/Captura de tela 2026-01-24 184440.png" width="700px" alt="Print do Jogo Mata Mosquito" />
 </div>
 
 ---
