@@ -59,13 +59,13 @@ O projeto foi construído para praticar manipulação do DOM e lógica de progra
 
     git clone https://github.com/GuilhermeCalixto1/app-orcamento-pessoal.git
 
-2.**Abra o jogo:
+2.**Abra o jogo:**
 
     Navegue até a pasta do projeto.
 
     Abra o arquivo index.html no seu navegador favorito.
 
-3.**Divirta-se:
+3.**Divirta-se:**
 
     Selecione o nível de dificuldade.
 
